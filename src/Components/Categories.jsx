@@ -28,7 +28,6 @@ export default function Categories() {
             {categoryName}
           </li>
         ))}
-
       </ul>
     </div>
   );
