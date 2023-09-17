@@ -10,6 +10,7 @@ function Sort() {
     setActiveSortType(sortTypes[i]);
     setIsOpen(!isOpen);
   };
+
   return (
     <div className="sort">
       <div className="sort__label">
