@@ -17,12 +17,13 @@ const Home = () => {
         setPizzas(json);
         setIsLoaded(true);
       });
+    window.scrollTo(0, 0);
   }, []);
 
   const [isLoaded, setIsLoaded] = React.useState(false);
 
   return (
-    <>
+    <div className="container">
       <div className="content__top">
         <Categories />
         <Sort />
@@ -33,7 +34,7 @@ const Home = () => {
           ? [...new Array(8)].map((_, i) => <PizzaSkeleton key={i} />)
           : pizzas.map((obj, i) => <PizzaBlock key={i} {...obj} />)}
       </div>
-    </>
+    </div>
   );
 };
 
