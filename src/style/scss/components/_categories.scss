@@ -12,6 +12,7 @@
       font-weight: bold;
       cursor: pointer;
       transition: background-color 0.1s ease-in-out;
+      
       @include noselect();
 
       &:hover {
@@ -26,6 +27,21 @@
         background-color: #282828;
         color: #fff;
       }
+      @media (max-width: 640px) {
+        margin-right: 5px;
+
+      }
+     }
+    @media (max-width: 1130px) {
+      flex-wrap: wrap;
+      gap: 20px;
     }
+    @media (max-width: 650px) {
+      gap: 10px;
+    }
+  }
+  @media (max-width: 1130px) {
+    max-width: 500px;
+    
   }
 }

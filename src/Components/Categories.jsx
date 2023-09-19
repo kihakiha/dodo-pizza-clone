@@ -1,14 +1,7 @@
-import React from "react";
+import React from 'react';
 
 export default function Categories() {
-  const categories = [
-    "Все",
-    "Мясные",
-    "Вегетарианская",
-    "Гриль",
-    "Острые",
-    "Закрытые",
-  ];
+  const categories = ['Все', 'Новинки', 'Вегетарианская', 'Острая', 'Хит'];
 
   const [activeCategory, setActiveCategory] = React.useState(0);
 
@@ -23,8 +16,7 @@ export default function Categories() {
           <li
             key={i}
             onClick={() => onClickCategory(i)}
-            className={activeCategory === i ? "active" : ""}
-          >
+            className={activeCategory === i ? 'active' : ''}>
             {categoryName}
           </li>
         ))}
