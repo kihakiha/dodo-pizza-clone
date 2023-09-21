@@ -1,0 +1,38 @@
+.root {
+  position: relative;
+  .input {
+    border: 1px solid #fe5f1e;
+    border-radius: 30px;
+    padding: 10px 20px;
+    color: #fe5f1e;
+    font-weight: 600;
+    font-size: 16px;
+    width: 300px;
+    transition: all 0.2s ease-in-out;
+    overflow: hidden;
+    &::placeholder {
+      transition: all 0.2s ease-in-out;
+      color: #fe5f1e;
+      overflow: hidden;
+    }
+  }
+
+  .searchIcon {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    fill: #fe5f1e;
+    right: 12px;
+    top: 12px;
+    cursor: text;
+  }
+  .closeIcon {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 10px;
+    top: 12px;
+    fill: #fe5f1e;
+    cursor: pointer;
+  }
+}

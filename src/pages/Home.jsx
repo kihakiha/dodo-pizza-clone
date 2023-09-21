@@ -5,7 +5,9 @@ import Sort from '../Components/Sort';
 import PizzaBlock from '../Components/PizzaBlock';
 import PizzaSkeleton from '../Components/PizzaBlock/PizzaBlockSkeleton';
 
-const Home = () => {
+const Home = ({ searchValue }) => {
+  console.log(searchValue);
+
   const [pizzas, setPizzas] = React.useState([]);
   const [categoryId, setCategoryId] = React.useState(0);
   const [sortType, setSortType] = React.useState({
@@ -35,6 +37,11 @@ const Home = () => {
 
   const [isLoaded, setIsLoaded] = React.useState(false);
 
+  const pizzasList = pizzas
+    .filter((obj) => obj.title.toLocaleLowerCase().includes(searchValue.toLocaleLowerCase()))
+    .map((obj, i) => <PizzaBlock key={i} {...obj} />);
+  const skeleton = [...new Array(4)].map((_, i) => <PizzaSkeleton key={i} />);
+
   return (
     <div className="container">
       <div className="content__top">
@@ -42,11 +49,7 @@ const Home = () => {
         <Sort value={sortType} onClickSortType={(i) => setSortType(i)} />
       </div>
       <h2 className="content__title">Все пиццы</h2>
-      <div className="content__items">
-        {!isLoaded
-          ? [...new Array(4)].map((_, i) => <PizzaSkeleton key={i} />)
-          : pizzas.map((obj, i) => <PizzaBlock key={i} {...obj} />)}
-      </div>
+      <div className="content__items">{!isLoaded ? skeleton : pizzasList}</div>
     </div>
   );
 };
