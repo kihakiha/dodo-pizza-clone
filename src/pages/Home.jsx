@@ -6,8 +6,6 @@ import PizzaBlock from '../Components/PizzaBlock';
 import PizzaSkeleton from '../Components/PizzaBlock/PizzaBlockSkeleton';
 
 const Home = ({ searchValue }) => {
-  console.log(searchValue);
-
   const [pizzas, setPizzas] = React.useState([]);
   const [categoryId, setCategoryId] = React.useState(0);
   const [sortType, setSortType] = React.useState({
@@ -21,9 +19,10 @@ const Home = ({ searchValue }) => {
     const sortBy = sortType.sortProperty.replace('-', '');
     const order = sortType.sortProperty.includes('-') ? 'desc' : 'asc';
     const category = categoryId !== 0 ? `category=${categoryId}` : '';
+    const search = searchValue.replace !== '' ? `${searchValue}` : '';
 
     fetch(
-      `https://630118e3e71700618a347338.mockapi.io/Pizzas?${category}&sortBy=${sortBy}&order=${order}`,
+      `https://630118e3e71700618a347338.mockapi.io/Pizzas?${category}&sortBy=${sortBy}&order=${order}&search=${search}`,
     )
       .then((res) => {
         return res.json();
@@ -33,12 +32,12 @@ const Home = ({ searchValue }) => {
         setIsLoaded(true);
       });
     window.scrollTo(0, 0);
-  }, [categoryId, sortType]);
+  }, [categoryId, sortType, searchValue]);
 
   const [isLoaded, setIsLoaded] = React.useState(false);
 
   const pizzasList = pizzas
-    .filter((obj) => obj.title.toLocaleLowerCase().includes(searchValue.toLocaleLowerCase()))
+    // .filter((obj) => obj.title.toLocaleLowerCase().includes(searchValue.toLocaleLowerCase()))
     .map((obj, i) => <PizzaBlock key={i} {...obj} />);
   const skeleton = [...new Array(4)].map((_, i) => <PizzaSkeleton key={i} />);
 
