@@ -1,0 +1,56 @@
+.root {
+  display: flex;
+
+  gap: 5px;
+  li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 42px;
+    height: 42px;
+    font-size: 18px;
+    font-weight: 800;
+    padding: 5px 11px;
+    border-radius: 100%;
+    border: 2px solid #232323;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    a {
+      color: #232323;
+    }
+  }
+  :global {
+    li {
+      &:not(.next, .previous):hover {
+        background-color: #fe5f1e;
+        border-color: #fe5f1e;
+        transition: all 0.2s ease-in-out;
+        a {
+          color: #fff;
+        }
+      }
+    }
+    .next,
+    .previous {
+      border: none;
+      cursor: pointer;
+      &:not(.disabled):hover {
+        a {
+          color: #fe5f1e;
+        }
+      }
+    }
+    .disabled {
+      cursor: default;
+      a {
+        opacity: 0.3;
+      }
+    }
+    .selected {
+      border: 2px solid #fe5f1e;
+      a {
+        color: #fe5f1e;
+      }
+    }
+  }
+}
