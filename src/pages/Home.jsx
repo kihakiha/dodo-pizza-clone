@@ -5,7 +5,11 @@ import Sort from '../Components/Sort';
 import PizzaBlock from '../Components/PizzaBlock';
 import PizzaSkeleton from '../Components/PizzaBlock/PizzaBlockSkeleton';
 import Pagination from '../Components/Pagination';
-const Home = ({ searchValue }) => {
+
+import { SearchContext } from '../App';
+const Home = () => {
+  const { searchValue } = React.useContext(SearchContext);
+
   const [currentPage, setCurrentPage] = React.useState(1);
   const [pizzas, setPizzas] = React.useState([]);
   const [categoryId, setCategoryId] = React.useState(0);
@@ -37,9 +41,7 @@ const Home = ({ searchValue }) => {
 
   const [isLoaded, setIsLoaded] = React.useState(false);
 
-  const pizzasList = pizzas
-    // .filter((obj) => obj.title.toLocaleLowerCase().includes(searchValue.toLocaleLowerCase()))
-    .map((obj, i) => <PizzaBlock key={i} {...obj} />);
+  const pizzasList = pizzas.map((obj, i) => <PizzaBlock key={i} {...obj} />);
   const skeleton = [...new Array(4)].map((_, i) => <PizzaSkeleton key={i} />);
 
   return (
