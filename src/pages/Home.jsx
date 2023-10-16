@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { setCategoryId } from '../redux/slices/filterSlice';
@@ -32,14 +33,12 @@ const Home = () => {
     const category = categoryId !== 0 ? `category=${categoryId}` : '';
     const search = searchValue.replace !== '' ? `${searchValue}` : '';
 
-    fetch(
-      `https://630118e3e71700618a347338.mockapi.io/Pizzas?page=${currentPage}&limit=8&${category}&sortBy=${sortBy}&order=${order}&search=${search}`,
-    )
-      .then((res) => {
-        return res.json();
-      })
-      .then((json) => {
-        setPizzas(json);
+    axios
+      .get(
+        `https://630118e3e71700618a347338.mockapi.io/Pizzas?page=${currentPage}&limit=8&${category}&sortBy=${sortBy}&order=${order}&search=${search}`,
+      )
+      .then((response) => {
+        setPizzas(response.data);
         setIsLoaded(true);
       });
     window.scrollTo(0, 0);
