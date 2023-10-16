@@ -1,17 +1,22 @@
 import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { onClickSortType } from '../redux/slices/filterSlice';
 
-function Sort({ value, onClickSortType }) {
-  const sortTypes = [
-    { name: 'Популярности ⬆️', sortProperty: '-rating' },
-    { name: 'Популярности ⬇️', sortProperty: 'rating' },
-    { name: 'Цене ⬆️', sortProperty: 'price' },
-    { name: 'Цене ⬇️', sortProperty: '-price' },
-    { name: 'Алфавиту', sortProperty: 'title' },
-  ];
+const sortTypes = [
+  { name: 'Популярности ⬆️', sortProperty: '-rating' },
+  { name: 'Популярности ⬇️', sortProperty: 'rating' },
+  { name: 'Цене ⬆️', sortProperty: 'price' },
+  { name: 'Цене ⬇️', sortProperty: '-price' },
+  { name: 'Алфавиту', sortProperty: 'title' },
+];
+
+function Sort() {
+  const dispatch = useDispatch();
+  const sort = useSelector((state) => state.filter.sort);
   const [isOpen, setIsOpen] = React.useState(false);
 
-  const onChooseSortType = (i) => {
-    onClickSortType(i);
+  const onChooseSortType = (obj) => {
+    dispatch(onClickSortType(obj));
     setIsOpen(!isOpen);
   };
 
@@ -31,7 +36,7 @@ function Sort({ value, onClickSortType }) {
           />
         </svg>
         <b>Сортировка по:</b>
-        <span onClick={() => setIsOpen(!isOpen)}>{value.name}</span>
+        <span onClick={() => setIsOpen(!isOpen)}>{sort.name}</span>
       </div>
       {isOpen && (
         <div className="sort__popup">
@@ -40,7 +45,7 @@ function Sort({ value, onClickSortType }) {
               <li
                 key={i}
                 onClick={() => onChooseSortType(type)}
-                className={value.sortProperty === type.sortProperty ? 'active' : ''}>
+                className={sort.sortProperty === type.sortProperty ? 'active' : ''}>
                 {type.name}
               </li>
             ))}
