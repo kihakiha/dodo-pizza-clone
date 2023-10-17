@@ -1,7 +1,24 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+
+import { addProduct, removeProduct, removeOneProduct } from '../redux/slices/cartSlice';
 
 export const CartItem = ({ id, title, imageUrl, price, type, size, pizzasAmountInCart }) => {
+  const dispatch = useDispatch();
+
   const sizesValue = [25, 30, 35];
+
+  const onClickRemoveProduct = () => {
+    dispatch(removeProduct({ id, pizzasAmountInCart, price }));
+  };
+
+  const onAddOnePizza = () => {
+    dispatch(addProduct({ id, type, size, price }));
+  };
+
+  const onRemoveOnePizza = () => {
+    dispatch(removeOneProduct({ id, type, size }));
+  };
 
   return (
     <div className="cart__item">
@@ -15,7 +32,9 @@ export const CartItem = ({ id, title, imageUrl, price, type, size, pizzasAmountI
         </p>
       </div>
       <div className="cart__item-count">
-        <div className="button button--outline button--circle cart__item-count-minus">
+        <div
+          className="button button--outline button--circle cart__item-count-minus"
+          onClick={pizzasAmountInCart > 1 ? onRemoveOnePizza : () => {}}>
           <svg
             width="10"
             height="10"
@@ -31,7 +50,9 @@ export const CartItem = ({ id, title, imageUrl, price, type, size, pizzasAmountI
           </svg>
         </div>
         <b>{pizzasAmountInCart}</b>
-        <div className="button button--outline button--circle cart__item-count-plus">
+        <div
+          className="button button--outline button--circle cart__item-count-plus"
+          onClick={onAddOnePizza}>
           <svg
             width="10"
             height="10"
@@ -50,7 +71,7 @@ export const CartItem = ({ id, title, imageUrl, price, type, size, pizzasAmountI
       <div className="cart__item-price">
         <b>{price * pizzasAmountInCart} ₽</b>
       </div>
-      <div className="cart__item-remove">
+      <div className="cart__item-remove" onClick={onClickRemoveProduct}>
         <div className="button button--outline button--circle">
           <svg
             width="10"
