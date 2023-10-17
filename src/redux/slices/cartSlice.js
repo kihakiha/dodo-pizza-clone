@@ -34,7 +34,19 @@ export const cartSlice = createSlice({
       // }, 0);
     },
     removeProduct(state, action) {
-      state.products = state.products.filter((product) => product.id !== action.payload.id);
+      const findProduct = state.products.find(
+        (obj) =>
+          obj.id === action.payload.id &&
+          obj.type === action.payload.type &&
+          obj.size === action.payload.size,
+      );
+
+      state.products = state.products.filter(
+        (product) =>
+          product.id !== findProduct.id ||
+          product.type !== findProduct.type ||
+          product.size !== findProduct.size,
+      );
       state.totalPrice -= action.payload.price * action.payload.pizzasAmountInCart;
       state.totalPizzasInCart -= action.payload.pizzasAmountInCart;
     },

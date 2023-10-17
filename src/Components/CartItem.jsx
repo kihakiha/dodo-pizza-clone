@@ -9,7 +9,7 @@ export const CartItem = ({ id, title, imageUrl, price, type, size, pizzasAmountI
   const sizesValue = [25, 30, 35];
 
   const onClickRemoveProduct = () => {
-    dispatch(removeProduct({ id, pizzasAmountInCart, price }));
+    dispatch(removeProduct({ id, pizzasAmountInCart, price, type, size }));
   };
 
   const onAddOnePizza = () => {
@@ -34,7 +34,7 @@ export const CartItem = ({ id, title, imageUrl, price, type, size, pizzasAmountI
       <div className="cart__item-count">
         <div
           className="button button--outline button--circle cart__item-count-minus"
-          onClick={pizzasAmountInCart > 1 ? onRemoveOnePizza : () => {}}>
+          onClick={pizzasAmountInCart > 1 ? onRemoveOnePizza : onClickRemoveProduct}>
           <svg
             width="10"
             height="10"
