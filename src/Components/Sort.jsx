@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { onClickSortType } from '../redux/slices/filterSlice';
 
-const sortTypes = [
+export const sortTypes = [
   { name: 'Популярности ⬆️', sortProperty: '-rating' },
   { name: 'Популярности ⬇️', sortProperty: 'rating' },
   { name: 'Цене ⬆️', sortProperty: 'price' },
