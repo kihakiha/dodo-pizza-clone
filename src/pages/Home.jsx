@@ -55,6 +55,7 @@ const Home = () => {
       });
     window.scrollTo(0, 0);
   };
+
   // Если был первый рендер, то проверяем URL хеддеры и сохраняем в редаксе
   React.useEffect(() => {
     if (window.location.search) {
@@ -74,6 +75,7 @@ const Home = () => {
     isSearch.current = false;
   }, [categoryId, sort.sortProperty, searchValue, currentPage]);
 
+  // Если был первый рендер и если изменили хеддеры то подставляй их в url
   React.useEffect(() => {
     if (isMounted.current) {
       const queryString = qs.stringify({
