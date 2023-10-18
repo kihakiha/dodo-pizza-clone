@@ -1,15 +1,15 @@
 h1 STACK:
 
 <hr>
-<li> * React v18
-* TypeScript
-* Redux Toolkit
-* React Router v6
-* Axios + Fetch
-* React Hooks
-* React Content Loader
-* React Pagination
-* Lodash.debounce
-* Prettier
-* CSS Modules
-* SCSS
+<li> React v18
+<li> TypeScript
+<li> Redux Toolkit
+<li> React Router v6
+<li> Axios + Fetch
+<li> React Hooks
+<li> React Content Loader
+<li> React Pagination
+<li> Lodash.debounce
+<li> Prettier
+<li> CSS Modules
+<li> SCSS
