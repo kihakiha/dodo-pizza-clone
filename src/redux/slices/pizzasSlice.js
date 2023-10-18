@@ -5,7 +5,7 @@ export const fetchPizzasRTK = createAsyncThunk('pizzas/fetchAllPizzas', async (p
   const { sortBy, order, category, search, currentPage } = params;
 
   const { data } = await axios.get(
-    `https://-630118e3e71700618a347338.mockapi.io/Pizzas?page=${currentPage}&limit=8&${category}&sortBy=${sortBy}&order=${order}&search=${search}`,
+    `https://630118e3e71700618a347338.mockapi.io/Pizzas?page=${currentPage}&limit=8&${category}&sortBy=${sortBy}&order=${order}&search=${search}`,
   );
   return data;
 });
@@ -19,9 +19,9 @@ export const pizzasSlice = createSlice({
   name: 'pizzas',
   initialState,
   reducers: {
-    setPizzas(state, action) {
-      state.items = action.payload;
-    },
+    // setPizzas(state, action) {
+    //   state.items = action.payload;
+    // },
   },
   extraReducers: {
     [fetchPizzasRTK.pending]: (state) => {

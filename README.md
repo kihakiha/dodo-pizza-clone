@@ -1,14 +1,15 @@
-### STACK:
+h1 STACK:
 
-React v18
-TypeScript
-Redux Toolkit
-React Router v6
-Axios + Fetch
-React Hooks
-Prettier
-CSS Modules
-SCSS
-React Content Loader
-React Pagination
-Lodash
+<hr>
+* React v18
+* TypeScript
+* Redux Toolkit
+* React Router v6
+* Axios + Fetch
+* React Hooks
+* React Content Loader
+* React Pagination
+* Lodash.debounce
+* Prettier
+* CSS Modules
+* SCSS
