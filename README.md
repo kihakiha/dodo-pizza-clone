@@ -1,4 +1,4 @@
-<h1> STACK:
+<h1> STACK: </h1>
 <hr>
 <li> React v18
 <li> TypeScript
