@@ -6,7 +6,6 @@
 body {
   background-color: $background;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-
 }
 
 .wrapper {
@@ -41,13 +40,27 @@ body {
     @media (max-width: 730px) {
       grid-template-columns: repeat(1, 1fr);
     }
+
+    &--empty {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-size: 22px;
+      margin-bottom: 100px;
+      h2 {
+        margin-bottom: 60px;
+        font-size: 36px;
+      }
+    }
   }
 
   &__top {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    
+
     @media (max-width: 960px) {
       flex-direction: column;
       gap: 30px;
@@ -123,7 +136,7 @@ body {
       }
     }
   }
-  
+
   .content__items {
     display: block;
   }
