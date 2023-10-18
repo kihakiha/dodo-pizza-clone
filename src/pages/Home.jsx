@@ -37,7 +37,7 @@ const Home = () => {
     dispatch(setCurrentPage(page));
   };
 
-  const fetchPizzas = () => {
+  const fetchPizzas = async () => {
     setIsLoaded(false);
 
     const sortBy = sort.sortProperty.replace('-', '');
@@ -45,14 +45,26 @@ const Home = () => {
     const category = categoryId !== 0 ? `category=${categoryId}` : '';
     const search = searchValue.replace !== '' ? `${searchValue}` : '';
 
-    axios
-      .get(
+    // await axios
+    //   .get(
+    //     `https://630118e3e71700618a347338.mockapi.io/Pizzas?page=${currentPage}&limit=8&${category}&sortBy=${sortBy}&order=${order}&search=${search}`,
+    //   )
+    //   .then((response) => {
+    //     setPizzas(response.data);
+    //     setIsLoaded(true);
+    //   });
+
+    try {
+      const response = await axios.get(
         `https://630118e3e71700618a347338.mockapi.io/Pizzas?page=${currentPage}&limit=8&${category}&sortBy=${sortBy}&order=${order}&search=${search}`,
-      )
-      .then((response) => {
-        setPizzas(response.data);
-        setIsLoaded(true);
-      });
+      );
+      setPizzas(response.data);
+    } catch (err) {
+      console.log(err);
+      alert('Error ' + err.response.status + '\nЧто то пошло не так');
+    } finally {
+      setIsLoaded(true);
+    }
     window.scrollTo(0, 0);
   };
 
