@@ -1,7 +1,7 @@
 h1 STACK:
 
 <hr>
-* React v18
+<li> * React v18
 * TypeScript
 * Redux Toolkit
 * React Router v6
