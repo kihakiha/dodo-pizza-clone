@@ -14,7 +14,25 @@
    ],
    "price": 289,
    "category": 0,
-   "rating": 4
+   "rating": 4,
+   "ingredients": [
+    {
+     "name": "Фирменный томатный соус",
+     "isRemovable": 0
+    },
+    {
+     "name": "Моцарелла",
+     "isRemovable": 0
+    },
+    {
+     "name": "Острая чоризо",
+     "isRemovable": 1
+    },
+    {
+     "name": "Сладкий перец",
+     "isRemovable": 1
+    }
+   ]
   },
   {
    "id": 1,
@@ -31,7 +49,21 @@
    ],
    "price": 289,
    "category": 2,
-   "rating": 6
+   "rating": 6,
+   "ingredients": [
+    {
+     "name": "Фирменный соус альфредо",
+     "isRemovable": 0
+    },
+    {
+     "name": "Моцарелла",
+     "isRemovable": 0
+    },
+    {
+     "name": "Сыры чеддер и пармезан",
+     "isRemovable": 0
+    }
+   ]
   },
   {
    "id": 2,
@@ -48,7 +80,33 @@
    ],
    "price": 519,
    "category": 0,
-   "rating": 4
+   "rating": 4,
+   "ingredients": [
+    {
+     "name": "Фирменный томатный соус",
+     "isRemovable": 0
+    },
+    {
+     "name": "Моцарелла",
+     "isRemovable": 0
+    },
+    {
+     "name": "Цыпленок",
+     "isRemovable": 1
+    },
+    {
+     "name": "Бекон",
+     "isRemovable": 1
+    },
+    {
+     "name": "Соус барбекю",
+     "isRemovable": 0
+    },
+    {
+     "name": "Красный лук",
+     "isRemovable": 1
+    }
+   ]
   },
   {
    "id": 3,
@@ -62,7 +120,33 @@
    ],
    "price": 369,
    "category": 1,
-   "rating": 2
+   "rating": 2,
+   "ingredients": [
+    {
+     "name": "Фирменный соус альфредо",
+     "isRemovable": 0
+    },
+    {
+     "name": "Моцарелла",
+     "isRemovable": 0
+    },
+    {
+     "name": "Цыпленок",
+     "isRemovable": 1
+    },
+    {
+     "name": "Ветчина",
+     "isRemovable": 1
+    },
+    {
+     "name": "Томаты",
+     "isRemovable": 1
+    },
+    {
+     "name": "Брынза",
+     "isRemovable": 1
+    }
+   ]
   },
   {
    "id": 4,
@@ -79,7 +163,41 @@
    ],
    "price": 469,
    "category": 2,
-   "rating": 8
+   "rating": 8,
+   "ingredients": [
+    {
+     "name": "Фирменный соус альфредо",
+     "isRemovable": 0
+    },
+    {
+     "name": "Моцарелла",
+     "isRemovable": 0
+    },
+    {
+     "name": "Цыпленок",
+     "isRemovable": 1
+    },
+    {
+     "name": "Шампиньоны",
+     "isRemovable": 1
+    },
+    {
+     "name": "сливочный соус с грибами",
+     "isRemovable": 0
+    },
+    {
+     "name": "Красный лук",
+     "isRemovable": 1
+    },
+    {
+     "name": "Чеснок",
+     "isRemovable": 1
+    },
+    {
+     "name": "Сыры чеддер и пармезан",
+     "isRemovable": 1
+    }
+   ]
   },
   {
    "id": 5,
@@ -96,7 +214,41 @@
    ],
    "price": 580,
    "category": 4,
-   "rating": 2
+   "rating": 2,
+   "ingredients": [
+    {
+     "name": "Фирменный соус альфредо",
+     "isRemovable": 0
+    },
+    {
+     "name": "Моцарелла",
+     "isRemovable": 0
+    },
+    {
+     "name": "Бекон",
+     "isRemovable": 1
+    },
+    {
+     "name": "Сыры чеддер и пармезан",
+     "isRemovable": 1
+    },
+    {
+     "name": "Томаты",
+     "isRemovable": 0
+    },
+    {
+     "name": "Красный лук",
+     "isRemovable": 1
+    },
+    {
+     "name": "Чеснок",
+     "isRemovable": 1
+    },
+    {
+     "name": "Итальянские травы",
+     "isRemovable": 1
+    }
+   ]
   },
   {
    "id": 6,
@@ -113,7 +265,21 @@
    ],
    "price": 675,
    "category": 0,
-   "rating": 9
+   "rating": 9,
+   "ingredients": [
+    {
+     "name": "Фирменный томатный соус",
+     "isRemovable": 0
+    },
+    {
+     "name": "Увеличенная порция моцареллы",
+     "isRemovable": 0
+    },
+    {
+     "name": "Пикантная пепперони",
+     "isRemovable": 1
+    }
+   ]
   },
   {
    "id": 7,
@@ -130,7 +296,25 @@
    ],
    "price": 450,
    "category": 2,
-   "rating": 10
+   "rating": 10,
+   "ingredients": [
+    {
+     "name": "Фирменный томатный соус",
+     "isRemovable": 0
+    },
+    {
+     "name": "Увеличенная порция моцареллы",
+     "isRemovable": 0
+    },
+    {
+     "name": "Томаты",
+     "isRemovable": 1
+    },
+    {
+     "name": "Итальянские травы",
+     "isRemovable": 1
+    }
+   ]
   },
   {
    "id": 8,
@@ -147,7 +331,41 @@
    ],
    "price": 419,
    "category": 0,
-   "rating": 10
+   "rating": 10,
+   "ingredients": [
+    {
+     "name": "Фирменный томатный соус",
+     "isRemovable": 0
+    },
+    {
+     "name": "Увеличенная порция моцареллы",
+     "isRemovable": 0
+    },
+    {
+     "name": "Томаты",
+     "isRemovable": 1
+    },
+    {
+     "name": "Шампиньоны",
+     "isRemovable": 1
+    },
+    {
+     "name": "Ветчина",
+     "isRemovable": 1
+    },
+    {
+     "name": "Пикантная пепперони",
+     "isRemovable": 1
+    },
+    {
+     "name": "Брынза",
+     "isRemovable": 1
+    },
+    {
+     "name": "Итальянские травы",
+     "isRemovable": 1
+    }
+   ]
   },
   {
    "id": 9,
@@ -164,7 +382,41 @@
    ],
    "price": 285,
    "category": 2,
-   "rating": 7
+   "rating": 7,
+   "ingredients": [
+    {
+     "name": "Фирменный томатный соус",
+     "isRemovable": 0
+    },
+    {
+     "name": "Моцарелла",
+     "isRemovable": 0
+    },
+    {
+     "name": "Томаты",
+     "isRemovable": 1
+    },
+    {
+     "name": "Шампиньоны",
+     "isRemovable": 1
+    },
+    {
+     "name": "Сладкий перец",
+     "isRemovable": 1
+    },
+    {
+     "name": "Красный лук",
+     "isRemovable": 1
+    },
+    {
+     "name": "Брынза",
+     "isRemovable": 1
+    },
+    {
+     "name": "Итальянские травы",
+     "isRemovable": 1
+    }
+   ]
   },
   {
    "id": 10,
@@ -181,7 +433,41 @@
    ],
    "price": 419,
    "category": 0,
-   "rating": 10
+   "rating": 10,
+   "ingredients": [
+    {
+     "name": "Фирменный томатный соус",
+     "isRemovable": 0
+    },
+    {
+     "name": "Моцарелла",
+     "isRemovable": 0
+    },
+    {
+     "name": "Соус Бургер",
+     "isRemovable": 0
+    },
+    {
+     "name": "Ветчина",
+     "isRemovable": 1
+    },
+    {
+     "name": "Маринованные огурчики",
+     "isRemovable": 1
+    },
+    {
+     "name": "Томаты",
+     "isRemovable": 1
+    },
+    {
+     "name": "Красный лук",
+     "isRemovable": 1
+    },
+    {
+     "name": "Чеснок",
+     "isRemovable": 1
+    }
+   ]
   },
   {
    "id": 11,
@@ -198,7 +484,33 @@
    ],
    "price": 469,
    "category": 4,
-   "rating": 10
+   "rating": 10,
+   "ingredients": [
+    {
+     "name": "Фирменный соус альфредо",
+     "isRemovable": 0
+    },
+    {
+     "name": "Моцарелла",
+     "isRemovable": 0
+    },
+    {
+     "name": "Цыпленок",
+     "isRemovable": 1
+    },
+    {
+     "name": "Соус Песто",
+     "isRemovable": 1
+    },
+    {
+     "name": "Брынза",
+     "isRemovable": 1
+    },
+    {
+     "name": "Томаты",
+     "isRemovable": 1
+    }
+   ]
   },
   {
    "id": 12,
@@ -215,7 +527,33 @@
    ],
    "price": 469,
    "category": 0,
-   "rating": 10
+   "rating": 10,
+   "ingredients": [
+    {
+     "name": "Фирменный томатный соус",
+     "isRemovable": 0
+    },
+    {
+     "name": "Моцарелла",
+     "isRemovable": 0
+    },
+    {
+     "name": "Цыпленок",
+     "isRemovable": 1
+    },
+    {
+     "name": "Ветчина",
+     "isRemovable": 1
+    },
+    {
+     "name": "Пикантная пепперони",
+     "isRemovable": 1
+    },
+    {
+     "name": "Острая чоризо",
+     "isRemovable": 1
+    }
+   ]
   },
   {
    "id": 13,
@@ -232,7 +570,25 @@
    ],
    "price": 419,
    "category": 0,
-   "rating": 10
+   "rating": 10,
+   "ingredients": [
+    {
+     "name": "Фирменный соус альфредо",
+     "isRemovable": 0
+    },
+    {
+     "name": "Моцарелла",
+     "isRemovable": 0
+    },
+    {
+     "name": "Цыпленок",
+     "isRemovable": 1
+    },
+    {
+     "name": "Ананасы",
+     "isRemovable": 1
+    }
+   ]
   },
   {
    "id": 14,
@@ -248,7 +604,49 @@
    ],
    "price": 519,
    "category": 4,
-   "rating": 10
+   "rating": 10,
+   "ingredients": [
+    {
+     "name": "Фирменный томатный соус",
+     "isRemovable": 0
+    },
+    {
+     "name": "Моцарелла",
+     "isRemovable": 0
+    },
+    {
+     "name": "Бекон",
+     "isRemovable": 1
+    },
+    {
+     "name": "Митболы",
+     "isRemovable": 1
+    },
+    {
+     "name": "Пикантная пепперони",
+     "isRemovable": 1
+    },
+    {
+     "name": "Томаты",
+     "isRemovable": 1
+    },
+    {
+     "name": "Шампиньоны",
+     "isRemovable": 1
+    },
+    {
+     "name": "Сладкий перец",
+     "isRemovable": 1
+    },
+    {
+     "name": "Красный лук",
+     "isRemovable": 1
+    },
+    {
+     "name": "Чеснок",
+     "isRemovable": 1
+    }
+   ]
   },
   {
    "id": 15,
@@ -265,7 +663,25 @@
    ],
    "price": 469,
    "category": 2,
-   "rating": 10
+   "rating": 10,
+   "ingredients": [
+    {
+     "name": "Фирменный соус альфредо",
+     "isRemovable": 0
+    },
+    {
+     "name": "Моцарелла",
+     "isRemovable": 0
+    },
+    {
+     "name": "Сыры чеддер и пармезан",
+     "isRemovable": 1
+    },
+    {
+     "name": "Сыр блю-чиз",
+     "isRemovable": 1
+    }
+   ]
   },
   {
    "id": 16,
@@ -282,7 +698,45 @@
    ],
    "price": 519,
    "category": 3,
-   "rating": 10
+   "rating": 10,
+   "ingredients": [
+    {
+     "name": "Фирменный томатный соус",
+     "isRemovable": 0
+    },
+    {
+     "name": "Моцарелла",
+     "isRemovable": 0
+    },
+    {
+     "name": "Острая чоризо",
+     "isRemovable": 1
+    },
+    {
+     "name": "Острый перец халапеньо",
+     "isRemovable": 1
+    },
+    {
+     "name": "Соус барбекю",
+     "isRemovable": 0
+    },
+    {
+     "name": "Митболы",
+     "isRemovable": 1
+    },
+    {
+     "name": "Томаты",
+     "isRemovable": 1
+    },
+    {
+     "name": "Сладкий перец",
+     "isRemovable": 1
+    },
+    {
+     "name": "Красный лук",
+     "isRemovable": 1
+    }
+   ]
   },
   {
    "id": 17,
@@ -299,7 +753,25 @@
    ],
    "price": 369,
    "category": 0,
-   "rating": 10
+   "rating": 10,
+   "ingredients": [
+    {
+     "name": "Фирменный томатный соус",
+     "isRemovable": 0
+    },
+    {
+     "name": "Увеличенная порция моцареллы",
+     "isRemovable": 0
+    },
+    {
+     "name": "Ветчина",
+     "isRemovable": 1
+    },
+    {
+     "name": "Шампиньоны",
+     "isRemovable": 1
+    }
+   ]
   },
   {
    "id": 18,
@@ -315,7 +787,37 @@
    ],
    "price": 519,
    "category": 1,
-   "rating": 10
+   "rating": 10,
+   "ingredients": [
+    {
+     "name": "Фирменный соус альфредо",
+     "isRemovable": 0
+    },
+    {
+     "name": "Моцарелла",
+     "isRemovable": 0
+    },
+    {
+     "name": "Мортаделла",
+     "isRemovable": 1
+    },
+    {
+     "name": "Трюфельный соус",
+     "isRemovable": 0
+    },
+    {
+     "name": "Шампиньоны",
+     "isRemovable": 1
+    },
+    {
+     "name": "Красный лук",
+     "isRemovable": 1
+    },
+    {
+     "name": "Чеснок",
+     "isRemovable": 1
+    }
+   ]
   },
   {
    "id": 19,
@@ -332,7 +834,33 @@
    ],
    "price": 519,
    "category": 0,
-   "rating": 10
+   "rating": 10,
+   "ingredients": [
+    {
+     "name": "Соус Ранч",
+     "isRemovable": 0
+    },
+    {
+     "name": "Моцарелла",
+     "isRemovable": 0
+    },
+    {
+     "name": "Цыпленок",
+     "isRemovable": 1
+    },
+    {
+     "name": "Ветчина",
+     "isRemovable": 1
+    },
+    {
+     "name": "Томаты",
+     "isRemovable": 1
+    },
+    {
+     "name": "Чеснок",
+     "isRemovable": 1
+    }
+   ]
   },
   {
    "id": 20,
@@ -349,6 +877,60 @@
    ],
    "price": 519,
    "category": 4,
-   "rating": 10
+   "rating": 10,
+   "ingredients": [
+    {
+     "name": "Фирменный соус альфредо",
+     "isRemovable": 0
+    },
+    {
+     "name": "Моцарелла",
+     "isRemovable": 0
+    },
+    {
+     "name": "Цыпленок",
+     "isRemovable": 1
+    },
+    {
+     "name": "Ветчина",
+     "isRemovable": 1
+    },
+    {
+     "name": "Бекон",
+     "isRemovable": 1
+    },
+    {
+     "name": "Сыры чеддер и пармезан",
+     "isRemovable": 1
+    },
+    {
+     "name": "Соус Песто",
+     "isRemovable": 0
+    },
+    {
+     "name": "Брынза",
+     "isRemovable": 1
+    },
+    {
+     "name": "Томаты",
+     "isRemovable": 1
+    },
+    {
+     "name": "Красный лук",
+     "isRemovable": 1
+    },
+    {
+     "name": "Сыр блю-чиз",
+     "isRemovable": 1
+    },
+    {
+     "name": "Чеснок",
+     "isRemovable": 1
+    },
+    {
+     "name": "Итальянские травы",
+     "isRemovable": 1
+    }
+   ]
   }
  ]
