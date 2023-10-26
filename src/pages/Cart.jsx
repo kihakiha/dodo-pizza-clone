@@ -5,9 +5,12 @@ import { Link } from 'react-router-dom';
 import { CartItem } from '../Components/CartItem';
 import { CartEmpty } from '../Components/CartEmpty';
 import { clearCart } from '../redux/slices/cartSlice';
+
+import { selectCart } from '../redux/slices/cartSlice';
+
 function Cart() {
   const dispatch = useDispatch();
-  const { products, totalPizzasInCart, totalPrice } = useSelector((state) => state.cart);
+  const { products, totalPizzasInCart, totalPrice } = useSelector(selectCart);
 
   const onClearCart = () => {
     dispatch(clearCart());

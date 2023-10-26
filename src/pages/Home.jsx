@@ -3,7 +3,13 @@ import qs from 'qs';
 import { useNavigate } from 'react-router-dom';
 
 import { useSelector, useDispatch } from 'react-redux';
-import { setCategoryId, setCurrentPage, setFilters } from '../redux/slices/filterSlice';
+import {
+  selectFilter,
+  setCategoryId,
+  setCurrentPage,
+  setFilters,
+} from '../redux/slices/filterSlice';
+
 import { fetchPizzasRTK } from '../redux/slices/pizzasSlice';
 
 import Categories from '../Components/Categories';
@@ -12,9 +18,9 @@ import PizzaBlock from '../Components/PizzaBlock';
 import PizzaSkeleton from '../Components/PizzaBlock/PizzaBlockSkeleton';
 import Pagination from '../Components/Pagination';
 
-import { sortTypes } from '../Components/Sort';
+import { selectPizzasData } from '../redux/slices/pizzasSlice';
 
-import { SearchContext } from '../App';
+import { sortTypes } from '../Components/Sort';
 
 const Home = () => {
   const navigate = useNavigate();
@@ -23,12 +29,8 @@ const Home = () => {
   const isSearch = React.useRef(false);
   const isMounted = React.useRef(false);
 
-  const { items, isPizzasFetched } = useSelector((state) => state.pizzas);
-  const { categoryId, sort, currentPage } = useSelector((state) => state.filter);
-
-  const { searchValue } = React.useContext(SearchContext);
-
-  // const [isLoaded, setIsLoaded] = React.useState(false);
+  const { items, isPizzasFetched } = useSelector(selectPizzasData);
+  const { categoryId, sort, currentPage, searchValue } = useSelector(selectFilter);
 
   const onClickCategory = (id) => {
     dispatch(setCategoryId(id));
@@ -39,8 +41,6 @@ const Home = () => {
   };
 
   const fetchPizzas = async () => {
-    // setIsLoaded(false);
-
     const sortBy = sort.sortProperty.replace('-', '');
     const order = sort.sortProperty.includes('-') ? 'desc' : 'asc';
     const category = categoryId !== 0 ? `category=${categoryId}` : '';
@@ -71,9 +71,7 @@ const Home = () => {
   }, []);
 
   React.useEffect(() => {
-    // if (!isSearch.current) {
     fetchPizzas();
-    // }
 
     isSearch.current = false;
   }, [categoryId, sort.sortProperty, searchValue, currentPage]);

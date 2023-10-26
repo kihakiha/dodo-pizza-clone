@@ -7,6 +7,7 @@ export const fetchPizzasRTK = createAsyncThunk('pizzas/fetchAllPizzas', async (p
   const { data } = await axios.get(
     `https://630118e3e71700618a347338.mockapi.io/Pizzas?page=${currentPage}&limit=8&${category}&sortBy=${sortBy}&order=${order}&search=${search}`,
   );
+
   return data;
 });
 
@@ -38,6 +39,8 @@ export const pizzasSlice = createSlice({
     },
   },
 });
+
+export const selectPizzasData = (state) => state.pizzas;
 
 // Action creators are generated for each case reducer function
 export const { setPizzas } = pizzasSlice.actions;

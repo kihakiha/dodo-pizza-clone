@@ -1,14 +1,10 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import { addProduct } from '../../redux/slices/cartSlice';
 
 function PizzaBlock({ id, title, price, imageUrl, sizes, types }) {
   const dispatch = useDispatch();
-
-  // const cartPizza = useSelector((state) => state.cart.products.find((obj) => obj.id === id));
-
-  // const addedPizza = cartPizza ? cartPizza.pizzasAmountInCart : 0;
 
   const onClickButtonAddPizza = () => {
     const product = {
