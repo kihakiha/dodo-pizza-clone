@@ -7,6 +7,7 @@ import Header from './Components/Header';
 import Home from './pages/Home';
 import NotFound404 from './pages/NotFound404';
 import Cart from './pages/Cart';
+import FullPizza from './pages/FullPizza';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/cart" element={<Cart />}></Route>
+          <Route path="/pizza/:pizzaId" element={<FullPizza />} />
           <Route path="*" element={<NotFound404 />} />
         </Routes>
       </div>
