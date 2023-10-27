@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useNavigate, useParams, Link } from 'react-router-dom';
 import axios from 'axios';
 
 import styles from './FullPizza.module.scss';
@@ -9,6 +9,7 @@ export default function FullPizza() {
 
   const { pizzaId } = useParams();
 
+  const navigate = useNavigate();
   React.useEffect(() => {
     async function fetchPizzaById() {
       try {
@@ -17,7 +18,7 @@ export default function FullPizza() {
         );
         setPizzaData(data);
       } catch (error) {
-        console.log(error);
+        navigate('/');
       }
     }
 
