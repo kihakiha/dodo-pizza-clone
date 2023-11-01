@@ -1,15 +1,10 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { onClickSortType } from '../redux/slices/filterSlice';
+import { SortType, onClickSortType } from '../redux/slices/filterSlice';
 
 import { selectSort } from '../redux/slices/filterSlice';
 
-type SortListItem = {
-  name: string;
-  sortProperty: string;
-};
-
-export const sortTypes: SortListItem[] = [
+export const sortTypes: SortType[] = [
   { name: 'Популярности ⬆️', sortProperty: '-rating' },
   { name: 'Популярности ⬇️', sortProperty: 'rating' },
   { name: 'Цене ⬆️', sortProperty: 'price' },
@@ -24,7 +19,7 @@ export const Sort: React.FC = () => {
 
   const sortRef = React.useRef<HTMLDivElement>(null);
 
-  const onChooseSortType = (obj: any) => {
+  const onChooseSortType = (obj: SortType) => {
     dispatch(onClickSortType(obj));
     setIsOpen(!isOpen);
   };

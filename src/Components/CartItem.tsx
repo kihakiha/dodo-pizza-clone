@@ -27,15 +27,21 @@ export const CartItem: React.FC<CartItemProps> = ({
   const sizesValue = [25, 30, 35];
 
   const onClickRemoveProduct = () => {
-    dispatch(removeProduct({ id, pizzasAmountInCart, price, type, size }));
+    // TODO:
+    // Передавать title, imageUrl не нужно => сделать их опциональными ?
+    dispatch(removeProduct({ id, pizzasAmountInCart, price, type, size, title, imageUrl }));
   };
 
   const onAddOnePizza = () => {
-    dispatch(addProduct({ id, type, size, price }));
+    // TODO:
+    // Передавать title, imageUrl не нужно => сделать их опциональными ?
+    dispatch(addProduct({ id, type, size, price, title, imageUrl }));
   };
 
   const onRemoveOnePizza = () => {
-    dispatch(removeOneProduct({ id, type, size }));
+    // TODO:
+    // Передавать title, imageUrl, price не нужно => сделать их опциональными ?
+    dispatch(removeOneProduct({ id, type, size, price, title, imageUrl }));
   };
 
   return (
