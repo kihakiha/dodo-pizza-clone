@@ -1,6 +1,6 @@
 import React from 'react';
 
-import NotFoundBlock from '../../Components/NotFoundBlock';
+import { NotFoundBlock } from '../../Components/NotFoundBlock';
 
 import styles from './NotFound404.module.scss';
 
