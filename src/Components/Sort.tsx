@@ -29,8 +29,10 @@ export const Sort: React.FC = () => {
     setIsOpen(!isOpen);
   };
   React.useEffect(() => {
-    const isSortClicked = (e: any) => {
-      if (!e.composedPath().includes(sortRef.current)) {
+    const isSortClicked = (e: MouseEvent) => {
+      console.log(e.composedPath());
+
+      if (sortRef.current && !e.composedPath().includes(sortRef.current)) {
         setIsOpen(false);
       }
     };
