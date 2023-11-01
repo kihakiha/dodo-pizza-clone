@@ -30,7 +30,7 @@ export const FullPizza: React.FC = () => {
   }, []);
 
   if (!pizzaData) {
-    return 'загрузка';
+    return <>загрузка</>;
   }
 
   return (
