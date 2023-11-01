@@ -12,17 +12,17 @@ import {
 
 import { fetchPizzasRTK } from '../redux/slices/pizzasSlice';
 
-import Categories from '../Components/Categories';
-import Sort from '../Components/Sort';
-import PizzaBlock from '../Components/PizzaBlock';
-import PizzaSkeleton from '../Components/PizzaBlock/PizzaBlockSkeleton';
-import Pagination from '../Components/Pagination';
+import { Categories } from '../Components/Categories';
+import { Sort } from '../Components/Sort';
+import { PizzaBlock } from '../Components/PizzaBlock';
+import { PizzaSkeleton } from '../Components/PizzaBlock/PizzaBlockSkeleton';
+import { Pagination } from '../Components/Pagination';
 
 import { selectPizzasData } from '../redux/slices/pizzasSlice';
 
 import { sortTypes } from '../Components/Sort';
 
-const Home = () => {
+export const Home: React.FC = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -32,11 +32,11 @@ const Home = () => {
   const { items, isPizzasFetched } = useSelector(selectPizzasData);
   const { categoryId, sort, currentPage, searchValue } = useSelector(selectFilter);
 
-  const onClickCategory = (id) => {
+  const onClickCategory = (id: number) => {
     dispatch(setCategoryId(id));
   };
 
-  const onChangePage = (page) => {
+  const onChangePage = (page: number) => {
     dispatch(setCurrentPage(page));
   };
 
@@ -47,6 +47,7 @@ const Home = () => {
     const search = searchValue.replace !== '' ? `${searchValue}` : '';
 
     dispatch(
+      // @ts-ignore
       fetchPizzasRTK({
         sortBy,
         order,
@@ -90,7 +91,7 @@ const Home = () => {
     isMounted.current = true;
   }, [categoryId, sort.sortProperty, currentPage]);
 
-  const pizzasList = items.map((obj, i) => <PizzaBlock key={i} {...obj} />);
+  const pizzasList = items.map((obj: any, i: number) => <PizzaBlock key={i} {...obj} />);
   const skeleton = [...new Array(4)].map((_, i) => <PizzaSkeleton key={i} />);
 
   return (
@@ -116,5 +117,3 @@ const Home = () => {
     </div>
   );
 };
-
-export default Home;

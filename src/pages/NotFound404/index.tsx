@@ -4,7 +4,7 @@ import NotFoundBlock from '../../Components/NotFoundBlock';
 
 import styles from './NotFound404.module.scss';
 
-const NotFound404 = () => {
+const NotFound404: React.FC = () => {
   return (
     <>
       <NotFoundBlock />

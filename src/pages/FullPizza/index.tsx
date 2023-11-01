@@ -4,8 +4,12 @@ import axios from 'axios';
 
 import styles from './FullPizza.module.scss';
 
-export default function FullPizza() {
-  const [pizzaData, setPizzaData] = React.useState();
+export const FullPizza: React.FC = () => {
+  const [pizzaData, setPizzaData] = React.useState<{
+    title: string;
+    imageUrl: string;
+    ingredients: [{ name: string; isRemovable: boolean }];
+  }>();
 
   const { pizzaId } = useParams();
 
@@ -52,4 +56,4 @@ export default function FullPizza() {
       </Link>
     </div>
   );
-}
+};

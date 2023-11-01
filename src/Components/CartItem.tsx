@@ -3,7 +3,25 @@ import { useDispatch } from 'react-redux';
 
 import { addProduct, removeProduct, removeOneProduct } from '../redux/slices/cartSlice';
 
-export const CartItem = ({ id, title, imageUrl, price, type, size, pizzasAmountInCart }) => {
+type CartItemProps = {
+  id: string;
+  title: string;
+  imageUrl: string;
+  price: number;
+  type: number;
+  size: number;
+  pizzasAmountInCart: number;
+};
+
+export const CartItem: React.FC<CartItemProps> = ({
+  id,
+  title,
+  imageUrl,
+  price,
+  type,
+  size,
+  pizzasAmountInCart,
+}) => {
   const dispatch = useDispatch();
 
   const sizesValue = [25, 30, 35];

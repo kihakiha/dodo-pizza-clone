@@ -3,11 +3,11 @@ import { Route, Routes } from 'react-router-dom';
 
 import './style/scss/app.scss';
 
-import Home from './pages/Home';
+import { Home } from './pages/Home';
 import NotFound404 from './pages/NotFound404';
-import Cart from './pages/Cart';
-import FullPizza from './pages/FullPizza';
-import MainLayout from './layouts/MainLayout';
+import { Cart } from './pages/Cart';
+import { FullPizza } from './pages/FullPizza';
+import { MainLayout } from './layouts/MainLayout';
 
 function App() {
   return (

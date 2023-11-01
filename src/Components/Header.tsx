@@ -1,13 +1,13 @@
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
-import Search from './Search';
+import { Search } from './Search';
 
 import { selectCart } from '../redux/slices/cartSlice';
 
 import Logo from '../assets/img/pizza-logo.svg';
 
-function Header() {
+export const Header: React.FC = () => {
   const { totalPrice, totalPizzasInCart } = useSelector(selectCart);
 
   return (
@@ -61,6 +61,4 @@ function Header() {
       </div>
     </div>
   );
-}
-
-export default Header;
+};
