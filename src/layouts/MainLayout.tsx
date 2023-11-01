@@ -1,7 +1,7 @@
 import React from 'react';
-import Header from '../Components/Header';
+import { Header } from '../Components/Header';
 import { Outlet } from 'react-router-dom';
-export default function MainLayout() {
+export const MainLayout: React.FC = () => {
   return (
     <div className="wrapper">
       <Header />
@@ -10,4 +10,4 @@ export default function MainLayout() {
       </div>
     </div>
   );
-}
+};
