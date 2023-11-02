@@ -34,9 +34,9 @@ export const Home: React.FC = () => {
   const { items, isPizzasFetched } = useSelector(selectPizzasData);
   const { categoryId, sort, currentPage, searchValue } = useSelector(selectFilter);
 
-  const onClickCategory = (id: number) => {
+  const onClickCategory = React.useCallback((id: number) => {
     dispatch(setCategoryId(id));
-  };
+  }, []);
 
   const onChangePage = (page: number) => {
     dispatch(setCurrentPage(page));
@@ -113,7 +113,7 @@ export const Home: React.FC = () => {
         <>
           <div className="content__top">
             <Categories value={categoryId} onClickCategory={onClickCategory} />
-            <Sort />
+            <Sort value={sort} />
           </div>
           <h2 className="content__title">Все пиццы</h2>
           <div className="content__items">
