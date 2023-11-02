@@ -45,14 +45,14 @@ export const Home: React.FC = () => {
   const fetchPizzas = async () => {
     const sortBy = sort.sortProperty.replace('-', '');
     const order = sort.sortProperty.includes('-') ? 'desc' : 'asc';
-    const category = categoryId !== 0 ? `category=${categoryId}` : '';
+    const category = categoryId !== 0 ? `${categoryId}` : '';
     const search = searchValue ? `${searchValue}` : '';
 
     dispatch(
       fetchPizzasRTK({
         sortBy,
         order,
-        category,
+        categoryId: String(category),
         search,
         currentPage: String(currentPage),
       }),
@@ -70,7 +70,7 @@ export const Home: React.FC = () => {
       dispatch(
         setFilters({
           searchValue: params.search,
-          categoryId: Number(params.category),
+          categoryId: Number(params.categoryId),
           currentPage: Number(params.currentPage),
           sort: sort ? sort : sortTypes[0],
         }),

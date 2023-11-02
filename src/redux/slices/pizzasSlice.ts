@@ -1,7 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { RootState } from '../store';
-import { SortType } from './filterSlice';
 
 type PizzaItem = {
   id: string;
@@ -21,7 +20,7 @@ export enum IsPizzasFetched {
 export type SearchProperties = {
   sortBy: string;
   order: string;
-  category:string;
+  categoryId:string;
   search:string;
   currentPage: string;
 }
@@ -62,10 +61,10 @@ export const pizzasSlice = createSlice({
 });
 
 export const fetchPizzasRTK = createAsyncThunk('pizzas/fetchAllPizzas', async (params: SearchProperties) => {
-  const { sortBy, order, category, search, currentPage } = params;
+  const { sortBy, order, categoryId, search, currentPage } = params;
 
   const { data } = await axios.get<PizzaItem[]>(
-    `https://630118e3e71700618a347338.mockapi.io/Pizzas?page=${currentPage}&limit=8&${category}&sortBy=${sortBy}&order=${order}&search=${search}`,
+    `https://630118e3e71700618a347338.mockapi.io/Pizzas?page=${currentPage}&limit=8&${categoryId}&sortBy=${sortBy}&order=${order}&search=${search}`,
   );
 
   return data as PizzaItem[];

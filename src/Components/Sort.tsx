@@ -28,8 +28,6 @@ export const Sort: React.FC<TSortProps> = React.memo(({ value }) => {
   };
   React.useEffect(() => {
     const isSortClicked = (e: MouseEvent) => {
-      console.log(e.composedPath());
-
       if (sortRef.current && !e.composedPath().includes(sortRef.current)) {
         setIsOpen(false);
       }
