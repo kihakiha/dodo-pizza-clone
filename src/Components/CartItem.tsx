@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 
-import { addProduct, removeProduct, removeOneProduct } from '../redux/slices/cartSlice';
+import { addProduct, removeProduct, removeOneProduct, TCartItem } from '../redux/slices/cartSlice';
 
 type CartItemProps = {
   id: string;
@@ -27,21 +27,15 @@ export const CartItem: React.FC<CartItemProps> = ({
   const sizesValue = [25, 30, 35];
 
   const onClickRemoveProduct = () => {
-    // TODO:
-    // Передавать title, imageUrl не нужно => сделать их опциональными ?
-    dispatch(removeProduct({ id, pizzasAmountInCart, price, type, size, title, imageUrl }));
+    dispatch(removeProduct({ id, pizzasAmountInCart, price, type, size } as TCartItem));
   };
 
   const onAddOnePizza = () => {
-    // TODO:
-    // Передавать title, imageUrl не нужно => сделать их опциональными ?
-    dispatch(addProduct({ id, type, size, price, title, imageUrl }));
+    dispatch(addProduct({ id, type, size, price } as TCartItem));
   };
 
   const onRemoveOnePizza = () => {
-    // TODO:
-    // Передавать title, imageUrl, price не нужно => сделать их опциональными ?
-    dispatch(removeOneProduct({ id, type, size, price, title, imageUrl }));
+    dispatch(removeOneProduct({ id, type, size } as TCartItem));
   };
 
   return (

@@ -1,6 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { RootState } from '../store';
+import { SortType } from './filterSlice';
 
 type PizzaItem = {
   id: string;
@@ -11,16 +12,29 @@ type PizzaItem = {
   types: number[];
 }
 
-interface PizzaSliceState {
-  items: PizzaItem[];
-  isPizzasFetched: 'loading' | 'success' | 'error';
+export enum IsPizzasFetched {
+  LOADING = 'loading',
+  SUCCESS = 'success',
+  ERROR = 'error',
 }
 
-type FetchPizzasProps = Record<string, string>
+export type SearchProperties = {
+  sortBy: string;
+  order: string;
+  category:string;
+  search:string;
+  currentPage: string;
+}
+
+interface PizzaSliceState {
+  items: PizzaItem[];
+  isPizzasFetched: IsPizzasFetched;
+}
  
+
 const initialState: PizzaSliceState = {
   items: [],
-  isPizzasFetched: 'loading', // loading || succes || error
+  isPizzasFetched: IsPizzasFetched.LOADING,
 };
 
 export const pizzasSlice = createSlice({
@@ -34,20 +48,20 @@ export const pizzasSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(fetchPizzasRTK.pending, (state) => {
       state.items = [];
-      state.isPizzasFetched = 'loading';
+      state.isPizzasFetched = IsPizzasFetched.LOADING;
     })
     builder.addCase(fetchPizzasRTK.fulfilled, (state,action) => {
       state.items = action.payload;
-      state.isPizzasFetched = 'success';
+      state.isPizzasFetched = IsPizzasFetched.SUCCESS;
     })
     builder.addCase(fetchPizzasRTK.rejected, (state) => {
-      state.isPizzasFetched = 'error';
+      state.isPizzasFetched = IsPizzasFetched.ERROR;
       state.items = [];
     })
   },
 });
 
-export const fetchPizzasRTK = createAsyncThunk('pizzas/fetchAllPizzas', async (params: FetchPizzasProps) => {
+export const fetchPizzasRTK = createAsyncThunk('pizzas/fetchAllPizzas', async (params: SearchProperties) => {
   const { sortBy, order, category, search, currentPage } = params;
 
   const { data } = await axios.get<PizzaItem[]>(

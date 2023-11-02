@@ -4,12 +4,14 @@ import { SortType, onClickSortType } from '../redux/slices/filterSlice';
 
 import { selectSort } from '../redux/slices/filterSlice';
 
+import { SortPropertyEnum } from '../redux/slices/filterSlice';
+
 export const sortTypes: SortType[] = [
-  { name: 'Популярности ⬆️', sortProperty: '-rating' },
-  { name: 'Популярности ⬇️', sortProperty: 'rating' },
-  { name: 'Цене ⬆️', sortProperty: 'price' },
-  { name: 'Цене ⬇️', sortProperty: '-price' },
-  { name: 'Алфавиту', sortProperty: 'title' },
+  { name: 'Популярности ⬆️', sortProperty: SortPropertyEnum.RATING_DESC },
+  { name: 'Популярности ⬇️', sortProperty: SortPropertyEnum.RATING_ASC },
+  { name: 'Цене ⬆️', sortProperty: SortPropertyEnum.PRICE_ASC },
+  { name: 'Цене ⬇️', sortProperty: SortPropertyEnum.PRICE_DESC },
+  { name: 'Алфавиту', sortProperty: SortPropertyEnum.TITLE },
 ];
 
 export const Sort: React.FC = () => {

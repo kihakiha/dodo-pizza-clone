@@ -2,15 +2,16 @@ import React from 'react';
 import qs from 'qs';
 import { useNavigate } from 'react-router-dom';
 
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import {
+  FilterSliceState,
   selectFilter,
   setCategoryId,
   setCurrentPage,
   setFilters,
 } from '../redux/slices/filterSlice';
 
-import { fetchPizzasRTK } from '../redux/slices/pizzasSlice';
+import { SearchProperties, fetchPizzasRTK } from '../redux/slices/pizzasSlice';
 
 import { Categories } from '../Components/Categories';
 import { Sort } from '../Components/Sort';
@@ -21,10 +22,11 @@ import { Pagination } from '../Components/Pagination';
 import { selectPizzasData } from '../redux/slices/pizzasSlice';
 
 import { sortTypes } from '../Components/Sort';
+import { useAppDispatch } from '../redux/store';
 
 export const Home: React.FC = () => {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const isSearch = React.useRef(false);
   const isMounted = React.useRef(false);
@@ -44,16 +46,15 @@ export const Home: React.FC = () => {
     const sortBy = sort.sortProperty.replace('-', '');
     const order = sort.sortProperty.includes('-') ? 'desc' : 'asc';
     const category = categoryId !== 0 ? `category=${categoryId}` : '';
-    const search = searchValue.replace !== '' ? `${searchValue}` : '';
+    const search = searchValue ? `${searchValue}` : '';
 
     dispatch(
-      // @ts-ignore
       fetchPizzasRTK({
         sortBy,
         order,
         category,
         search,
-        currentPage,
+        currentPage: String(currentPage),
       }),
     );
 
@@ -63,10 +64,17 @@ export const Home: React.FC = () => {
   // Если был первый рендер, то проверяем URL хеддеры и сохраняем в редаксе
   React.useEffect(() => {
     if (window.location.search) {
-      const params = qs.parse(window.location.search.substring(1));
+      const params = qs.parse(window.location.search.substring(1)) as unknown as SearchProperties;
 
-      const sort = sortTypes.find((obj) => obj.sortProperty === params.sortProperty);
-      dispatch(setFilters({ ...params, sort }));
+      const sort = sortTypes.find((obj) => obj.sortProperty === params.sortBy);
+      dispatch(
+        setFilters({
+          searchValue: params.search,
+          categoryId: Number(params.category),
+          currentPage: Number(params.currentPage),
+          sort: sort ? sort : sortTypes[0],
+        }),
+      );
       isSearch.current = true;
     }
   }, []);

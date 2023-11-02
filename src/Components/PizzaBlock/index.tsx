@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { CartItem, addProduct } from '../../redux/slices/cartSlice';
+import { TCartItem, addProduct } from '../../redux/slices/cartSlice';
 
 type PizzaBlockProps = {
   id: string;
@@ -23,7 +23,7 @@ export const PizzaBlock: React.FC<PizzaBlockProps> = ({
   const dispatch = useDispatch();
 
   const onClickButtonAddPizza = () => {
-    const product: CartItem = {
+    const product: TCartItem = {
       id,
       title,
       price,
